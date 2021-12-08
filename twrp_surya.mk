@@ -22,10 +22,10 @@ DEVICE_PATH := device/xiaomi/surya
 $(call inherit-product, device/xiaomi/surya/device.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_surya
+PRODUCT_NAME := twrp_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3
