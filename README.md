@@ -30,7 +30,6 @@ Download tree surya A11:
 
 ```
 git clone https://github.com/FabricioSC123/device-xiaomi-surya-twrp.git -b android-11 device/xiaomi/surya
-
 ```
 
 
