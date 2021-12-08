@@ -42,20 +42,20 @@ PRODUCT_COPY_FILES += \
 
 # Copy modules for depmod
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/chipone_tddi_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/chipone_tddi_mmi.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/abov_sar_mmi_overlay.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/abov_sar_mmi_overlay.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/ilitek_0flash_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/ilitek_0flash_mmi.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/exfat.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/exfat.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/fpc1020_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/fpc1020_mmi.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/ktd3136_bl.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/ktd3136_bl.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/leds_aw99703.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/leds_aw99703.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/mmi_annotate.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/mmi_annotate.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/mmi_info.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/mmi_info.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/mmi_sys_temp.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/mmi_sys_temp.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/moto_f_usbnet.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/moto_f_usbnet.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/nova_0flash_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/nova_0flash_mmi.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/qpnp_adaptive_charge.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/qpnp_adaptive_charge.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/qpnp-power-on-mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/qpnp-power-on-mmi.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/sensors_class.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/sensors_class.ko \
-    $(LOCAL_PATH)/recovery/root/vendor/lib/modules/1.1/utags.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/utags.ko
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/chipone_tddi_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/chipone_tddi_mmi.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/abov_sar_mmi_overlay.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/abov_sar_mmi_overlay.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/ilitek_0flash_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/ilitek_0flash_mmi.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/exfat.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/exfat.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/fpc1020_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/fpc1020_mmi.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/ktd3136_bl.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/ktd3136_bl.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/leds_aw99703.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/leds_aw99703.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/mmi_annotate.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/mmi_annotate.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/mmi_info.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/mmi_info.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/mmi_sys_temp.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/mmi_sys_temp.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/moto_f_usbnet.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/moto_f_usbnet.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/nova_0flash_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/nova_0flash_mmi.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/qpnp_adaptive_charge.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/qpnp_adaptive_charge.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/qpnp-power-on-mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/qpnp-power-on-mmi.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/sensors_class.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/sensors_class.ko \
+    $(DEVICE_PATH)/recovery/root/vendor/lib/modules/1.1/utags.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/1.1/utags.ko
 

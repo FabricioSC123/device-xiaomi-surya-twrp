@@ -46,57 +46,43 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := \
-    console=ttyMSM0,115200n8 \
-    androidboot.hardware=qcom \
-    androidboot.console=ttyMSM0 \
-    androidboot.memcg=1 \
-    lpm_levels.sleep_disabled=1 \
-    video=vfb:640x400,bpp=32,memsize=3072000 \
-    msm_rtb.filter=0x237 \
-    service_locator.enable=1 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    swiotlb=2048 \
-    androidboot.boot_devices=soc/1d84000.ufshc \
-    cgroup.memory=nokmem,nosocket \
-    androidboot.init_fatal_reboot_target=recovery \
-    androidboot.fastboot=1 \
-    androidboot.selinux=permissive
-
-BOARD_BOOT_HEADER_VERSION   := 2
-BOARD_KERNEL_IMAGE_NAME     := Image
-BOARD_KERNEL_PAGESIZE       := 4096
-BOARD_KERNEL_BASE           := 0x00000000
-BOARD_KERNEL_TAGS_OFFSET    := 0x00000100
-BOARD_KERNEL_OFFSET         := 0x00008000
-BOARD_KERNEL_SECOND_OFFSET  := 0x00f00000
-BOARD_RAMDISK_OFFSET        := 0x01000000
-BOARD_DTB_OFFSET            := 0x01f00000
-
+# Kernel
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 androidboot.selinux=permissive
+BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_BOOT_HEADER_VERSION := 2
+BOARD_KERNEL_BASE          := 0x00000000
+BOARD_KERNEL_TAGS_OFFSET   := 0x00000100
+BOARD_KERNEL_OFFSET        := 0x00008000
+BOARD_KERNEL_SECOND_OFFSET := 0x00000000
+BOARD_RAMDISK_OFFSET       := 0x01000000
+BOARD_DTB_OFFSET           := 0x01f00000
 TARGET_KERNEL_ARCH := arm64
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
+BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
 
-BOARD_MKBOOTIMG_ARGS := \
-    --base $(BOARD_KERNEL_BASE) \
-    --pagesize $(BOARD_KERNEL_PAGESIZE) \
-    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
-    --kernel_offset $(BOARD_KERNEL_OFFSET) \
-    --second_offset $(BOARD_KERNEL_SECOND_OFFSET) \
-    --dtb_offset $(BOARD_DTB_OFFSET) \
-    --header_version $(BOARD_BOOT_HEADER_VERSION) \
-    --dtb $(TARGET_PREBUILT_DTB)
-    
 # Assert
 TARGET_OTA_ASSERT_DEVICE := surya,karna
 
 # Avb
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
